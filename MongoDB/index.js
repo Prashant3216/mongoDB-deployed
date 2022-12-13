@@ -1,9 +1,11 @@
 
 const express=require('express')
 const cors=require("cors")
+const dotenv=require("dotenv")
 const useModel=require("./user/user.model")
 const mongoose=require("mongoose")
-
+const PORT= 8080
+dotenv.config()
 const app=express()
 
 app.use(express.urlencoded({extended:true}))
@@ -14,7 +16,7 @@ app.use(cors())
 
 app.get('/', (req, res)=>{res.send('hello')})
 
-app.listen(8080, async ()=>{
-    await mongoose.connect("mongodb+srv://prashant3216:Mingi3216@@cluster0.cznl6yu.mongodb.net/eval_10")
+app.listen(PORT, async ()=>{
+    await mongoose.connect(`${process.env.MONGOURL}/eval-10`)
     console.log('server started on port 8080')
 })
