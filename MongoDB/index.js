@@ -4,7 +4,6 @@ const cors=require("cors")
 const dotenv=require("dotenv")
 const useModel=require("./user/user.model")
 const mongoose=require("mongoose")
-const PORT= 8080
 dotenv.config()
 const app=express()
 
@@ -16,7 +15,7 @@ app.use(cors())
 
 app.get('/', (req, res)=>{res.send('hello')})
 
-app.listen(PORT, async ()=>{
+app.listen(`PORT`, async ()=>{
     await mongoose.connect(process.env.MONGOURL)
     console.log('server started on port 8080')
 })
