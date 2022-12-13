@@ -17,6 +17,6 @@ app.use(cors())
 app.get('/', (req, res)=>{res.send('hello')})
 
 app.listen(PORT, async ()=>{
-    await mongoose.connect(`${process.env.MONGOURL}/eval-10`)
+    await mongoose.connect(process.env.MONGOURL)
     console.log('server started on port 8080')
 })
