@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/emi", userRoute)
-app.use("/shooping", shoppingRoute)
+app.use("/shopping", shoppingRoute)
 
 app.get('/', (req, res)=>{res.send('hello')})
 
