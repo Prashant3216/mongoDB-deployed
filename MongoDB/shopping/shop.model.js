@@ -8,6 +8,6 @@ const shopSchema=Schema({
     description: String,
     })
 
-const shopModel= model("shopping",shopSchema )
+const shopModel= new model("shopping",shopSchema )
 
 module.exports=shopModel

@@ -15,7 +15,7 @@ const PORT=process.env.PORT || 8080
 app.use(express.urlencoded({extended:true}))
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin: "*"}))
 
 app.use("/emi", userRoute)
 app.use("/shopping", shoppingRoute)
@@ -26,6 +26,8 @@ app.get('/', (req, res)=>{res.send('hello')})
 
 app.listen(PORT, async ()=>{
     mongoose.set('strictQuery', true)
+    // console.log(process.env.MONGOURL+"/eval11")
+    // console.log(shopModel)
     await mongoose.connect(process.env.MONGOURL+"/eval11")
     console.log('server started on port 8080')
 })
