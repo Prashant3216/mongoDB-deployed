@@ -21,6 +21,15 @@ app.post("/", async (req, res) => {
       return res.status(404).send("Something went wrong");
     }
   });
+  app.delete("/products/:id", async (req, res) => {
+    let {id}=req.params
+    try {
+      await shopModel.deleteOne({"_id":id});
+      return res.status(200).send("deleted");
+    } catch (error) {
+      return res.status(404).send("Something went wrong");
+    }
+  });
 
 
 
