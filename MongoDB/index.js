@@ -5,8 +5,8 @@ const dotenv=require("dotenv")
 // const useModel=require("./user/user.model")
 // const shopModel=require("./shopping/shop.model")
 const mongoose=require("mongoose")
-const userRoute=require("./user/user.route")
-const shoppingRoute=require("./shopping/shop.routes")
+// const userRoute=require("./user/user.route")
+// const shoppingRoute=require("./shopping/shop.routes")
 const jobRoute=require("./job/job.routes")
 const jobModel=require("./job/job.model")
 
@@ -19,8 +19,8 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
 
-app.use("/emi", userRoute)
-app.use("/shopping", shoppingRoute)
+// app.use("/emi", userRoute)
+// app.use("/shopping", shoppingRoute)
 app.use("/job", jobRoute)
 
 
