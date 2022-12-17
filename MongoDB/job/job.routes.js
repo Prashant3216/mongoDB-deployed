@@ -47,9 +47,9 @@ app.post("/", async (req, res) => {
   });
 // Search API with query
   app.get("/joblist/search", async (req, res) => {
-    let {lenguage}=req.query
+    let {language}=req.query
     try {
-      let products=await jobModel.find({lenguage:lenguage});
+      let products=await jobModel.find({language:lenguage});
       return res.status(200).send(products);
     } catch (error) {
       return res.status(404).send("Something went wrong");
