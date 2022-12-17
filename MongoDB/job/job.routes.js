@@ -27,7 +27,7 @@ app.post("/", async (req, res) => {
 
 //   Filter API with Role
   app.get("/joblist/filter", async (req, res) => {
-    let role=req.query
+    let {role}=req.query
     try {
       let products=await jobModel.find({role:role});
       return res.status(200).send(products);
@@ -47,7 +47,7 @@ app.post("/", async (req, res) => {
   });
 // Search API with query
   app.get("/joblist/search", async (req, res) => {
-    let lenguage=req.query
+    let {lenguage}=req.query
     try {
       let products=await jobModel.find({lenguage:lenguage});
       return res.status(200).send(products);
