@@ -2,11 +2,13 @@
 const express=require('express')
 const cors=require("cors")
 const dotenv=require("dotenv")
-const useModel=require("./user/user.model")
-const shopModel=require("./shopping/shop.model")
+// const useModel=require("./user/user.model")
+// const shopModel=require("./shopping/shop.model")
 const mongoose=require("mongoose")
 const userRoute=require("./user/user.route")
 const shoppingRoute=require("./shopping/shop.routes")
+const jobRoute=require("./job/job.routes")
+const jobModel=require("./job/job.model")
 
 dotenv.config()
 const app=express()
@@ -19,6 +21,9 @@ app.use(cors({origin: "*"}))
 
 app.use("/emi", userRoute)
 app.use("/shopping", shoppingRoute)
+app.use("/job", jobRoute)
+
+
 
 app.get('/', (req, res)=>{res.send('hello')})
 
@@ -28,6 +33,6 @@ app.listen(PORT, async ()=>{
     mongoose.set('strictQuery', true)
     // console.log(process.env.MONGOURL+"/eval11")
     // console.log(shopModel)
-    await mongoose.connect(process.env.MONGOURL+"/eval11")
+    await mongoose.connect(process.env.MONGOURL+"/eval12")
     console.log('server started on port 8080')
 })
