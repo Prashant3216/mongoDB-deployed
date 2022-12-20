@@ -27,9 +27,9 @@ app.use(cors())
 // app.use("/shopping", shoppingRoute)
 // app.use("/job", jobRoute)
 app.use("/game", gameRoute)
+
+
 app.get('/', (req, res)=>{res.send('hello')})
-
-
 
 app.listen(PORT, async ()=>{
     mongoose.set('strictQuery', true)

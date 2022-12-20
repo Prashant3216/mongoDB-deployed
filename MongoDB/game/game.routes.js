@@ -13,7 +13,7 @@ app.post("/", async (req, res) => {
       return res.status(405).send(error.message);
     }
   });
-  app.get("/products", async (req, res) => {
+  app.get("/users", async (req, res) => {
     try {
       let products=await gameModel.find();
       return res.status(200).send(products);
@@ -21,3 +21,4 @@ app.post("/", async (req, res) => {
       return res.status(404).send("Something went wrong");
     }
   });
+  module.exports = app;
