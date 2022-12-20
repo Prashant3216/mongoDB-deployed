@@ -13,9 +13,11 @@ app.post("/", async (req, res) => {
       return res.status(405).send(error.message);
     }
   });
-  app.get("/users", async (req, res) => {
+  app.get("/user:name", async (req, res) => {
+    let {name}=req.params
+
     try {
-      let products=await gameModel.find();
+      let products=await gameModel.findOne({name});
       return res.status(200).send(products);
     } catch (error) {
       return res.status(404).send("Something went wrong");
@@ -42,4 +44,7 @@ app.post("/", async (req, res) => {
       return res.status(404).send("Something went wrong");
     }
   });
+
+
+
   module.exports = app;
