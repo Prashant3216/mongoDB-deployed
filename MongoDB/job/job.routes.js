@@ -16,7 +16,7 @@ app.post("/", async (req, res) => {
 });
 
 // get Data API
-app.get("/joblist", async (req, res) => {
+app.get("/users", async (req, res) => {
   try {
     let products = await jobModel.find();
     return res.status(200).send(products);
