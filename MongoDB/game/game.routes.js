@@ -13,7 +13,7 @@ app.post("/", async (req, res) => {
       return res.status(405).send(error.message);
     }
   });
-  app.get("/user:name", async (req, res) => {
+  app.get("/user/:name", async (req, res) => {
     let {name}=req.params
 
     try {
