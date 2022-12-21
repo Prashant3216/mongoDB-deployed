@@ -5,7 +5,6 @@ const app = Router();
 
 app.post("/", async (req, res) => {
     let body=req.body
-    // console.log(body)
     try {
      await gameModel.insertMany(body);
       return res.status(200).send("data added successfully");
