@@ -17,10 +17,7 @@ app.get("/", async (req, res) => {
   }
 });
 app.get("/all", async (req, res) => {
-    let { category, difficulty, ques } = req.query;
-    ques = +ques;
-    console.log(category, difficulty, ques);
-    // console.log(body)
+    
     try {
       let questions = await qesModel.find()
       return res.status(200).send(questions);
