@@ -6,6 +6,7 @@ const app = Router();
 // get questions by filter  API
 app.get("/", async (req, res) => {
     let { category, difficulty, ques } = req.query;
+    ques= +ques
   // console.log(body)
   try {
     let questions= await qesModel.aggregate([
