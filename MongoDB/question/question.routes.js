@@ -10,7 +10,7 @@ app.get("/", async (req, res) => {
   // console.log(body)
   try {
     let questions= await qesModel.aggregate([
-        { $match: { category: category, difficulty: difficulty } },
+        { $match: [{ category: category}, {difficulty:difficulty}]},
         { $sample: { size: ques } },
       ]);
     return res.status(200).send(questions);
