@@ -10,7 +10,7 @@ app.get("/", async (req, res) => {
   console.log(category, difficulty, ques);
   // console.log(body)
   try {
-    let questions = await qesModel.find({category:category, difficulty:difficulty}).limit(ques)
+    let questions = await qesModel.find({$and:[{category:category}, {difficulty:difficulty}]}).limit(ques)
     return res.status(200).send(questions);
   } catch (error) {
     return res.status(405).send(error.message);
