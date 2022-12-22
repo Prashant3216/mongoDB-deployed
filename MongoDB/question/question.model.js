@@ -9,6 +9,6 @@ const qesSchema = Schema({
   incorrect_answers:{type:Array}
 });
 
-const qesModel = new model("user", qesSchema);
+const qesModel = new model("question", qesSchema);
 
 module.exports = qesModel;
