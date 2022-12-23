@@ -16,14 +16,14 @@ app.get("/", async (req, res) => {
     return res.status(405).send(error.message);
   }
 });
-app.get("/all", async (req, res) => {
+// app.get("/all", async (req, res) => {
     
-    try {
-      let questions = await qesModel.find()
-      return res.status(200).send(questions);
-    } catch (error) {
-      return res.status(405).send(error.message);
-    }
-  });
+//     try {
+//       let questions = await qesModel.find()
+//       return res.status(200).send(questions);
+//     } catch (error) {
+//       return res.status(405).send(error.message);
+//     }
+//   });
 
 module.exports = app;
