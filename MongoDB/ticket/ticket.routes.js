@@ -5,7 +5,7 @@ const app=Router()
 app.post("/", async (req,res)=>{
     let body=req.body
     try {
-        await ticketModel.insertOne(body)
+        await ticketModel.insertMany(body)
         return res.status(200).send("sigup Successfully")
     } catch (error) {
         return res.status(401).send("something went wrong")
