@@ -30,7 +30,7 @@ app.post("/user", async (req,res)=>{
 
     try {
         let users=await ticketModel.findOne({email:email, password:password})
-        return res.status.send(users)
+        return res.status(200).send(users)
     } catch (error) {
         return res.status(401).send("something went wrong")
     }
