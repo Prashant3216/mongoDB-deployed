@@ -11,8 +11,10 @@ const mongoose=require("mongoose")
 // const jobModel=require("./job/job.model")
 // const gameModel=require("./game/game.model")
 // const gameRoute=require("./game/game.routes")
-const qesModel=require("./question/question.model")
-const qesRoute=require("./question/question.routes")
+// const qesModel=require("./question/question.model")
+// const qesRoute=require("./question/question.routes")
+const ticketRoute=require("./ticket/ticket.routes")
+const ticketModel=require('./ticket/ticket.model')
 
 
 
@@ -29,7 +31,8 @@ app.use(cors())
 // app.use("/shopping", shoppingRoute)
 // app.use("/job", jobRoute)
 // app.use("/game", gameRoute)
-app.use("/question", qesRoute)
+// app.use("/question", qesRoute)
+app.use("/ticket", ticketRoute)
 
 
 
@@ -39,6 +42,6 @@ app.listen(PORT, async ()=>{
     mongoose.set('strictQuery', true)
     // console.log(process.env.MONGOURL+"/eval11")
     // console.log(shopModel)
-    await mongoose.connect(process.env.MONGOURL+"/eval14")
+    await mongoose.connect(process.env.MONGOURL+"/eval15")
     console.log('server started on port 8080')
 })
