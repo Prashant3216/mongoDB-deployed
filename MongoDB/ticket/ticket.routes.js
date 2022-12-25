@@ -15,10 +15,10 @@ app.post("/", async (req,res)=>{
 
 app.patch("/create/:id", async (req,res)=>{
     let {id}=req.params
-    let body=req.body
+    let ticketBody=req.body
     body.date_time=new Date()
     try {
-        await ticketModel.updateOne({_id:id}, {$push:{tickets:body}})
+        await ticketModel.updateOne({_id:id}, {$push:{tickets:ticketBody}})
         return res.status(200).send("Ticket created Successfully")
     } catch (error) {
         return res.status(401).send("something went wrong")
