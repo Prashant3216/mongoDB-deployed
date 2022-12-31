@@ -1,4 +1,8 @@
 const { Schema, model } = require("mongoose");
+const mongoose=require("mongoose")
+const dotenv=require("dotenv")
+dotenv.config()
+var questionsDB=mongoose.createConnection(process.env.MONGOURL+"/eval14")
 
 const qesSchema = Schema({
   category:String,
@@ -9,6 +13,6 @@ const qesSchema = Schema({
   incorrect_answers:{type:Array}
 });
 
-const qesModel = new model("question", qesSchema);
+const qesModel = questionsDB.model("question", qesSchema);
 
 module.exports = qesModel;

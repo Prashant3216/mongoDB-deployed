@@ -1,4 +1,9 @@
 const {Schema, model}=require("mongoose")
+const mongoose=require("mongoose")
+const dotenv=require("dotenv")
+dotenv.config()
+
+var shoppingDB=mongoose.createConnection(process.env.MONGOURL+"/eval11")
 
 const shopSchema=Schema({
     title:String,
@@ -8,6 +13,6 @@ const shopSchema=Schema({
     description: String,
     })
 
-const shopModel= new model("shopping",shopSchema )
+const shopModel=shoppingDB.model("shopping",shopSchema )
 
 module.exports=shopModel

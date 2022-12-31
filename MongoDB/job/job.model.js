@@ -1,4 +1,8 @@
 const { Schema, model } = require("mongoose");
+const mongoose=require("mongoose")
+const dotenv=require("dotenv")
+dotenv.config()
+var jobTypeDB=mongoose.createConnection(process.env.MONGOURL+"/eval12")
 
 const jobSchema = Schema({
   company: String,
@@ -12,6 +16,6 @@ const jobSchema = Schema({
   language: String,
 });
 
-const jobModel = new model("jobtype", jobSchema);
+const jobModel = jobTypeDB.model("jobtype", jobSchema);
 
 module.exports = jobModel;
